@@ -1,0 +1,286 @@
+#define _CRT_SECURE_NO_WARNINGS
+ 
+ 
+#include<stdio.h>
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9 };
+//	printf("%d\n", arr[4]);
+//	return 0;
+//}
+
+
+//exp1 ? exp2 : exp3
+//exp1为真，则exp2被执行，否则exp3被执行，代码如下
+//int main()
+//{
+//	int a = 30;
+//	int b = 20;
+//	int max = (a > b ? a : b);
+//	printf("%d\n", max);
+//	return 0;
+//}
+
+
+//& 与，把数转化为二进制进行同位比较
+//&&逻辑与，直接比较数，相同为一，不同为零。
+
+//int main()
+//{
+//	int a = (int)3.54;
+//	printf("%d\n", a);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 1;
+//	int b = 2;
+//	int c = a - b;
+//	printf("%d\n", c);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 1;
+//	int b = ~a;//~按位取反，b是有符号的整形
+//	//负数在内存中存储的时候存的是二进制的补码，使用和打印时用的是原码
+//	//首位是符号位 0为正，1为负        原码 111111111
+//	//原码符号位不变，其他位取反得到反码 反码 100000000
+//	//反码加一得到补码                  补码 100000001 
+//  //这题中a=00000000000000000000000000000000   共三十二位
+//	//取反后存进去的b=11111111111111111111111111111111是补码
+//	//现在要求原码b-1=11111111111111111111111111111110
+//	//符号位不变，其他位取反=10000000000000000000000000000001
+//	//最终符号位为一，所以为负数，整体值为一，所以最终结果为-1.
+	//printf("%d\n", b);
+	//return 0;
+//}
+// 如-2
+// 10000000000000000000000000000010 原码
+// 11111111111111111111111111111101 反码
+// 11111111111111111111111111111110 补码
+//只要是整数，内存中存储的都是补码
+//正数：原码，反码，补码相同
+//负数：原码：直接按正负写出二进制序列
+//     反码：原码序列符号位不变，其他位取反
+//	 补码：反码序列加一
+
+//int main()
+//{
+//	int a = 0;
+//	int arr[] = { 0,1,2,3,4,5,6,7,8,9 };
+//	printf("%d\n", sizeof(arr));
+//	printf("%d\n", sizeof(int));
+//	printf("%d\n", sizeof(arr) / sizeof(arr[0]));
+//	return 0;
+//}
+
+
+
+//int Max(int x, int y)
+//{
+//	if (x > y)
+//		return x;
+//	else
+//		return y;
+//}
+//int main()
+//{
+//	int num1=8;
+//	int num2=4;
+//	int max = 0;
+//	max = Max(num1, num2);
+//	printf("%d\n", max);
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	int a = 6;    //0110=6
+//	int b = 10;   //1010=10
+//	int c = a & b;//0010=2
+//	int d = a | b;//1110=14
+//	int f = a ^ b;//1100=12
+//	printf("%d\n%d\n%d\n", c, d, f);
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	int i = 0;
+//	int arr[10] = {1,2,3,4,5,6,7,8,9,10};
+//	while ( i < 10)
+//	{
+//		printf("%d\n", arr[i]);
+//		i++;
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	printf("hello world");
+//	return 0;
+//}
+//#include<stdio.h>
+//int main()
+//{
+//	int line = 0;
+//	while (line <= 20000)
+//	{
+//		printf("敲一行代码：%d\n", line);
+//			line++;
+//	}
+//	if(line>20000)
+//	printf("好offer");
+//	return 0;
+//}
+//2.33.44
+//int main()
+//{
+//	int vx = 0;
+//	scanf("%d", &vx);
+//	if (vx == 3)
+//		printf("成功");
+//	else
+//		printf("失败");
+//	return 0;
+//}
+//int main()
+//{
+//	int intput = 0;
+//	printf("加入比特\n");
+//	printf("你要好好学习吗？\n");
+//	scanf("%d", &intput);
+//	if (intput == 1)
+//		printf("加油你可以的");
+//	
+//	else
+//		printf("回家种地吧你");
+//	
+//	return 0;
+//}
+//#include<stdio.h>
+//#include<string.h>
+//int main()
+//{
+//	//printf("%d\n", strlen("c:\test\32\test.c"));
+//	printf("%c\n", '\x61');
+//	return 0;
+//}
+//int main()
+//{
+//	printf("%c\n", '\'');
+//	printf("\\tabc");
+//	return 0;
+//}
+
+//int main()
+//{
+//	char a1[] = "abc";
+//	char a2[] = { 'a','b','c',0};
+//	printf("%d\n", strlen(a1));
+//	printf("%d\n", strlen(a2));
+//	printf("%d\n", sizeof(a1));
+//	printf("%d\n", sizeof(a2));
+//	return 0;
+//}
+//int main()
+//{
+//	char a1[] = "abc";
+//	char a2[] = { 'a','b','c' ,'\0'};
+//	printf("%s\n", a1);
+//	printf("%s\n", a2);
+//	return 0;
+//}
+//enum subject
+//{
+//	math,
+//	chinese,
+//	english,
+//};
+//int main()
+//{
+//	enum subject add= chinese;
+//	add = math;
+//	printf("%d\n", add);
+//	return 0;
+//}
+//int main()
+//{
+//	const int num = 4;
+//	printf("%d\n",num);
+//	//num = 8;
+//	printf("%d\n", num);
+//	return 0;
+//}
+
+//int V = 17;
+//
+//void test()
+//{
+//	printf("test()-%d\n", V);
+//}
+//
+//int main()
+//{
+//	extern int glo;
+//	test();
+//	printf("%d\n%d\n", V, glo);
+//	return 0;
+//}
+//#include<stdio.h>
+//int add(int x, int y)
+//{
+//	int z = x + y;
+//	return z;
+//}
+//int main()
+//{
+//	int num1=5;
+//	int num2=7;
+//	int sum=0;
+//	//scanf("%d%d", &num1, &num2);
+//	sum = add(num1, num2);
+//	printf("sum=%d\n", sum);
+//	return 0;
+//}
+//
+//int main()
+//{
+//	int num1;
+//	int sum;
+//	scanf("%d", &num1);
+//	sum = num1;
+//	printf("sum=%d\n", sum);
+//	return 0;
+//}
+
+
+//
+//int a = 20;
+//int main()
+//{
+//	//int a = 10;
+//	printf("%d\n", a);
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	//printf("%d\n", sizeof(double));
+//	//printf("%d\n", sizeof(long));
+//	//printf("%d\n", sizeof(long long));
+//	//printf("%d\n", sizeof(int));
+//	//char ch = 'A';
+//	float f = 45.1f;
+//	double gk = 3.14;
+//	//printf("%c\n", ch);
+//	printf("%f\n", f);
+//	printf("%lf\n", gk);
+//	//printf("hello 耿华章\n");
+//	return 0;
+//}
