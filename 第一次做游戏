@@ -1,0 +1,81 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<stdlib.h>
+#include<math.h>
+#include<time.h>
+void menu()
+{
+	printf("\n********************************\n");
+	printf("*****       欢迎          *******\n");
+	printf("*****  1.开始   0.结束    *******\n");
+	printf("********************************\n");
+}
+// rand max//是在0-32767之间随机生成一个数，max最大的是32767
+//头文件为stdlib.h,可以在定义里查看   #define RAND_MAX 0x7fff
+//但是生成的随机数顺序固定，需要用srand来给一个不同的起始值
+//所以srand里也需要一个随机数
+//因为时间是在一直变化，所以加个时间戳 
+//时间戳：当前时间减去计算机的起始时间（1970.1.1.0：0：0）=多少秒
+void game()
+{
+	//1，生成一个随机数; --rand（）
+	int ret = 0;
+	int i = 1;
+	int num = 0;//接受猜的数的值
+	//srand需要的是整形，所以把时间定义成整形，null是空参数，不会产生效果
+	ret = rand()%100+1;//生成1-100的随机数，取模后最大为99，再加一就是1-100了
+
+	//printf("%d", ret);
+	//2，猜数字。
+	while (1)
+	{
+		printf("\n请猜一个数字：");
+		scanf("%d", &num);
+		if (num > ret)
+		{
+			printf("猜大了\n");
+			//printf("(已猜次数：%d\n)", i);
+		}
+		else if (num < ret)
+		{
+			printf("猜小了\n");
+			//printf("(已猜次数：%d\n)", i);
+		}
+		else
+		{
+			printf("恭喜你，猜对了\n");
+			printf("(已猜次数：%d)\n", i);
+			break;
+		}
+		i++;
+	}
+}
+int main()
+{
+	srand((unsigned int)time(NULL));
+	//srand需要的是整形，所以把时间定义成整形，time函数里面的参数需要的是指针
+	// null是空参数，不会产生效果
+	//放主函数里是因为不用频繁调用，那样会使随机数接近。
+	int i = 0;
+	do
+	{
+		menu();
+		printf("请选择：\n");
+		scanf("%d", &i);
+		switch (i)
+		{
+		case 1:
+			game();
+			break;
+		case 0:
+			printf("已退出游戏\n");
+			break;
+		default:
+			printf("选择错误\n");
+			break;
+		}
+	} while (i);
+	return 0;
+}
