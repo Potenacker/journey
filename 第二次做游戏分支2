@@ -1,0 +1,16 @@
+#define _CRT_SECURE_NO_WARNINGS
+#define ROW 3
+#define COL 3
+#include<stdlib.h>
+#include<time.h>
+//声明一下
+void Initboard(char board[ROW][COL], int row, int col);
+void displayboard(char board[ROW][COL], int row, int col);
+void playermove(char board[ROW][COL], int row, int col);
+void pcmove(char board[ROW][COL], int row, int col);
+//电脑需要告诉我们游戏的状态
+//玩家赢-'*'
+//电脑赢-'#'
+//平局-'Q'
+//继续-'C'
+char iswin(char board[ROW][COL], int row, int col);
